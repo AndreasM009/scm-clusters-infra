@@ -1,0 +1,27 @@
+---
+apiVersion: source.toolkit.fluxcd.io/v1beta1
+kind: GitRepository
+metadata:
+  name: flux-staging
+  namespace: flux-staging
+spec:
+  interval: 1m0s
+  ref:
+    branch: main
+  secretRef:
+    name: flux-staging
+  url: ssh://git@github.com/AndreasM009/scm-clusters-infra
+---
+apiVersion: kustomize.toolkit.fluxcd.io/v1beta1
+kind: Kustomization
+metadata:
+  name: flux-staging
+  namespace: flux-staging
+spec:
+  interval: 10m0s
+  path: ./clusters/staging
+  prune: true
+  sourceRef:
+    kind: GitRepository
+    name: flux-staging
+  validation: client
