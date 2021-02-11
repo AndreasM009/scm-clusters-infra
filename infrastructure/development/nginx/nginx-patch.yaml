@@ -7,14 +7,15 @@ spec:
     spec:
       sourceRef:
         namespace: flux-dev
-  template:
-    spec:
-      containers:
-        - name: nginx-ingress-dev-controller
-          args:
-            - /nginx-ingress-controller
-            - '--ingress-class=nginx-dev'
-            - '--configmap=ingress/nginx-ingress-dev-controller'
+  spec:
+    template:
+      spec:
+        containers:
+          - name: nginx-ingress-dev-controller
+            args:
+              - /nginx-ingress-controller
+              - '--ingress-class=nginx-dev'
+              - '--configmap=ingress/nginx-ingress-dev-controller'
   values:
     replicaCount: 1
     service:
