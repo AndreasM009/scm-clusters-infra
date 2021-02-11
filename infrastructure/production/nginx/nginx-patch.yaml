@@ -1,0 +1,15 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: nginx
+spec:
+  chart:
+    spec:
+      sourceRef:
+        namespace: flux-prod
+  values:
+    replicaCount: 2
+    service:
+      externalTrafficPolicy: "Local"
+    scope:
+      namespace: scm-prod
