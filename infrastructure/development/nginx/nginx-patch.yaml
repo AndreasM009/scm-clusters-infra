@@ -8,6 +8,8 @@ spec:
       sourceRef:
         namespace: flux-dev
   values:
+    controller:
+      name: dev-controller
     replicaCount: 1
     service:
       externalTrafficPolicy: "Local"
