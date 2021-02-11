@@ -7,7 +7,7 @@ spec:
   interval: 10m0s
   sourceRef:
     kind: GitRepository
-    name: flux-development
+    name: development
   path: ./infrastructure/development
   prune: true
   validation: client

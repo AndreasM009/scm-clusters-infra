@@ -7,7 +7,7 @@ spec:
   interval: 10m0s
   sourceRef:
     kind: GitRepository
-    name: flux-production
+    name: production
   path: ./infrastructure/production
   prune: true
   validation: client
