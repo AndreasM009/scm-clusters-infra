@@ -6,7 +6,7 @@ spec:
   chart:
     spec:
       sourceRef:
-        namespace: flux-prod
+        namespace: flux-dev
   values:
     replicaCount: 1
     service:
